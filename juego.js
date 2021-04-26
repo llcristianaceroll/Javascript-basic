@@ -117,3 +117,21 @@ for(let i = 0 ; i < autos.length ; i++){
 
 var newAuto = new auto("Ferrari", "S", "2020");
 var newAuto2 = new auto("Tesla", "X", "202");
+
+//////////métodos de recorridos de Arrays filter y map//
+
+var articulos = [
+    {nombre:"Libro", costo:20000},
+    {nombre:"TV", costo:1500000},
+    {nombre:"Celular", costo:4000000},
+    {nombre:"Dron", costo:2800000},
+    {nombre:"Gorra", costo:100000}
+];
+
+var articulosFiltrados = articulos.filter(function (articulo){
+    return articulo.costo <=2000000;
+});///// filtra el articulo  completo me lo guarda con la propiedades completas
+
+var articulosNombre =  articulos.map(function(articulo) {
+    return articulo.nombre;
+})
