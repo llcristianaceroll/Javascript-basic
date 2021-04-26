@@ -118,7 +118,7 @@ for(let i = 0 ; i < autos.length ; i++){
 var newAuto = new auto("Ferrari", "S", "2020");
 var newAuto2 = new auto("Tesla", "X", "202");
 
-//////////métodos de recorridos de Arrays filter y map//
+//////////métodos de recorridos de Arrays filter, map, find,forEach//
 
 var articulos = [
     {nombre:"Libro", costo:20000},
@@ -134,4 +134,12 @@ var articulosFiltrados = articulos.filter(function (articulo){
 
 var articulosNombre =  articulos.map(function(articulo) {
     return articulo.nombre;
-})
+});
+
+var encuentraArticulos = articulos.find(function(articulo) {
+    return articulo.nombre==="Drone";
+});////busca el valor que igualemos sino nos tarera el primer valor o propiedad
+
+articulos.forEach(function(articulo){
+    console.log(articulo.nombre);
+});
