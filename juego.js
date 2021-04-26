@@ -79,7 +79,7 @@ console.log(estudiantes);
 console.log(estudiante);
    saludarEstudiantes(estudiante);
 }
-//////////////////Objetos
+//////////////////Objetos///////////////
 
 var miAuto = {
     marca: "Toyota",
@@ -91,3 +91,29 @@ var miAuto = {
 };
 
 miAuto.detallDelAuto();
+/// objeto: coleccion de propiedades
+///instancia: obejeto que deriva de otro objeto
+///metodo: es cuando se asigna una propiedad tipo funcion a un objeto
+
+////////Funcion Constructora///////////
+
+function auto(marca, modelo, annio) {
+    this.marca = marca;
+    this.modelo = modelo;
+    this.annio = annio;
+}
+
+var autos = [];
+for(let i = 0 ; i < 30 ; i++){
+  var marca = prompt("Ingresa la marca del auto");
+  var modelo = prompt("Ingresa el modelo del auto");
+  var annio = prompt("Ingresa el año del auto");
+  autos.push(new auto (marca, modelo, annio));
+}
+
+for(let i = 0 ; i < autos.length ; i++){
+  console.log(autos[i]);
+}
+
+var newAuto = new auto("Ferrari", "S", "2020");
+var newAuto2 = new auto("Tesla", "X", "202");
