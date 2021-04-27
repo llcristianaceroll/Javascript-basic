@@ -118,7 +118,7 @@ for(let i = 0 ; i < autos.length ; i++){
 var newAuto = new auto("Ferrari", "S", "2020");
 var newAuto2 = new auto("Tesla", "X", "202");
 
-//////////métodos de recorridos de Arrays filter, map, find,forEach//
+//////////métodos de recorridos de Arrays filter, map, find, forEach, some//
 
 var articulos = [
     {nombre:"Libro", costo:20000},
@@ -142,4 +142,8 @@ var encuentraArticulos = articulos.find(function(articulo) {
 
 articulos.forEach(function(articulo){
     console.log(articulo.nombre);
+});
+
+var articulosBaratos = articulos.some(function(articulo){
+    return articulo.costo <= 2000000;
 });
