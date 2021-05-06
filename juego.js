@@ -175,10 +175,12 @@ miNombre = "Cristian"; //// el console nos muestra undefined y Critian
 //// es cuando las varia y func  se declaran al incio del codigo  antes que se ejecute cualqueir linea de codigo
 
 hey()/// no importa donde llame hey() se me ejecuta por el hoisting
+    //// las funciones se declaran antes que las variables siempre por el hoisting
 
 function hey () {
-    console.log("Hola" + miNombre);
+    console.log("Hola" + miNombre);/// me muestra Hola undefined
 }
 
-var miNombre = "Cristian"/// la declare abajo pero se pone al inicio por el hoisting
-
+var miNombre = "Cristian";
+//// simpre declara al inicio funciones primero y despues llamarla
+//// para evitar variables que mo han sido declaradas.
