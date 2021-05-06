@@ -147,3 +147,38 @@ articulos.forEach(function(articulo){
 var articulosBaratos = articulos.some(function(articulo){
     return articulo.costo <= 2000000;// nos devuelvo verdadero o falso
 });
+
+////////hoisting///////// cuandos las variables y funciones de procesan antes que se ejecute el codigo
+
+var miNombre;//declarar
+miNombre = ""//inicilaiza
+
+var miNombre = "ccc"
+
+/////hoisting/////////
+
+console.log(miNombre);// sale undefined porque llamamos una variable antes de declarar e inicianizarla
+// estos es lo que pasa//
+// var miNombre = undefined
+//console.log(miNombre); => undefined por eso se declara e inicializa primero
+var miNombre = "Diego"; 
+
+///////////////////
+
+var miNombre = undefined;
+
+console.log(miNombre + "Soy ese hoisting");
+
+miNombre = "Cristian"; //// el console nos muestra undefined y Critian
+
+/////Hoisting funcionnes///
+//// es cuando las varia y func  se declaran al incio del codigo  antes que se ejecute cualqueir linea de codigo
+
+hey()/// no importa donde llame hey() se me ejecuta por el hoisting
+
+function hey () {
+    console.log("Hola" + miNombre);
+}
+
+var miNombre = "Cristian"/// la declare abajo pero se pone al inicio por el hoisting
+
