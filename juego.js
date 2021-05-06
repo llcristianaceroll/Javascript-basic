@@ -75,8 +75,8 @@ function saludarEstudiantes (estudiantes) {
 
 while (estudiantes.length > 0) {
 console.log(estudiantes);
-   var estudiante = estudiantes.shift();
-console.log(estudiante);
+   var estudiante = estudiantes.shift();/// shif nos elmina el elemento con indice cero, y ese elemento lo podemos guardar solito den otra variable
+console.log(estudiante);                /// pop es lo opuesto a shift
    saludarEstudiantes(estudiante);
 }
 //////////////////Objetos///////////////
@@ -134,7 +134,7 @@ var articulosFiltrados = articulos.filter(function (articulo){
 
 var articulosNombre =  articulos.map(function(articulo) {
     return articulo.nombre;
-});
+});///// filtra parte del articulo ejemplo solo el nombre sin los costos
 
 var encuentraArticulos = articulos.find(function(articulo) {
     return articulo.nombre==="Drone";
@@ -142,8 +142,8 @@ var encuentraArticulos = articulos.find(function(articulo) {
 
 articulos.forEach(function(articulo){
     console.log(articulo.nombre);
-});
+});//// filtra el array y nos trae las cosas que pidamos
 
 var articulosBaratos = articulos.some(function(articulo){
-    return articulo.costo <= 2000000;
+    return articulo.costo <= 2000000;// nos devuelvo verdadero o falso
 });
