@@ -184,3 +184,22 @@ function hey () {
 var miNombre = "Cristian";
 //// simpre declara al inicio funciones primero y despues llamarla
 //// para evitar variables que mo han sido declaradas.
+
+
+/////////////////////////clases*///////////////
+
+// clase = define las carateristicas del objeto
+// objeto =  una instancia de una clase
+// propiedad = Una caracteristica del objeto
+// metodo = una capacidad del objeto
+// constructor =  es un metodo llamado en el momento de la creacion de instancias
+
+function Persona(nombre) { //// esto es una clase Persona
+    this.nombre = nombre; //// dentro va los metodos, propiedas, variables etc y vuelve el constructor
+    let dni = "1234567"; //// sino pongo this esta variable es privada y no publica ya que no puedo accder desde fuera.
+    console.log("Hola soy " + nombre);
+}
+
+let objetoPersona = new Persona("Cristian Acero"); /// esto es una instancia de la clase persona donde podemos acceder 
+console.log(objetoPersona.nombre);               // variables publicas = las que podemos acceder desde afiera y tiene this.
+console.log(objetoPersona.dni);               // variables privada = me va a mostrar undefined
