@@ -243,3 +243,28 @@ let objetoPersona2 = new Persona("Omaira", 50); /// nueva instancia de la clase 
               
 objetoPersona.saludar();
 objetoPersona2.saludar();
+
+
+////metodo dentro de otro metodo con el dni///
+
+function Persona(nombre, edad) { 
+    this.nombre = nombre;
+    this.edad = edad;
+    let dni = "1234567"; 
+    
+    this.getDni = function() { /// esto es un metodo= accion quue tiene una clase ej accder al dni que es variable privada
+        return dni ;
+    }
+
+    this.saludar = function() {
+        console.log(`Hola soy ${nombre} tengo ${edad} anios mi dni es ${this.getDni()}`);
+    }/// este es un metodo para saludar
+
+
+}
+
+let objetoPersona = new Persona("Cristian Acero", 26); // instancia de la clase persona
+let objetoPersona2 = new Persona("Omaira", 50); /// nueva instancia de la clase persona
+              
+objetoPersona.saludar();
+objetoPersona2.saludar();
