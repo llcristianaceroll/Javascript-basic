@@ -298,3 +298,31 @@ let objetoPersona2 = new Persona("Omaira", 50);
 objetoPersona.saludar();
 objetoPersona2.saludar();
 
+//***************Class**************/
+
+class Persona {
+
+    constructor(nombre,edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+        let dni;
+    }
+
+    set estableceDni(valor) {
+        this.dni = valor;
+    }
+
+    get regresaDni() {
+        return this.dni;
+    }
+
+    saludar(){
+        console.log(`Hola soy ${this.nombre} tengo ${this.edad} anios mi dni es ${this.dni}`);
+    }
+}
+
+let objetoPersona = new Persona("Cristian Acero", 26);
+objetoPersona.estableceDni = 1234567; ///nos fuimos al set
+objetoPersona.dni = 123; /// aqui alteramos el dato de la propiedad
+objetoPersona.saludar();
+console.log(objetoPersona.regresaDni);
