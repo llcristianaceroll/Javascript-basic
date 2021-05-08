@@ -203,3 +203,19 @@ function Persona(nombre) { //// esto es una clase Persona
 let objetoPersona = new Persona("Cristian Acero"); /// esto es una instancia de la clase persona donde podemos acceder 
 console.log(objetoPersona.nombre);               // variables publicas = las que podemos acceder desde afiera y tiene this.
 console.log(objetoPersona.dni);               // variables privada = me va a mostrar undefined
+
+////////////metodos////////////
+
+function Persona(nombre) { 
+    this.nombre = nombre;
+    let dni = "1234567"; 
+    console.log("Hola soy " + nombre);
+
+    this.getDni = function() { /// esto es un metodo= accion quue tiene una clase ej accder al dni que es variable privada
+        return dni ;
+    }
+}
+
+let objetoPersona = new Persona("Cristian Acero"); 
+console.log(objetoPersona.nombre);               
+console.log(objetoPersona.getDni());  // ahora si puede acceder al dni asi sea privada ya que estoy generando un metodo que me devuelve dni
