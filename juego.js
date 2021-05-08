@@ -326,3 +326,37 @@ objetoPersona.estableceDni = 1234567; ///nos fuimos al set
 objetoPersona.dni = 123; /// aqui alteramos el dato de la propiedad
 objetoPersona.saludar();
 console.log(objetoPersona.regresaDni);
+
+//////////Weakmap/////////////
+
+
+let personaMap = new WeakMap();///ayuda a hacer privadas nuesyras propiedades
+
+class Persona {
+
+    constructor(nombre,edad) {
+        personaMap.set(this, {
+        nombre : nombre,
+        edad : edad,
+        dni : ''
+        });        
+    }
+
+    set estableceDni(valor) {
+        personaMap.get(this).dni = valor;
+    }
+
+    get dni() {
+        return personaMap.get(this).dni;
+    }
+
+    saludar(){
+        console.log(`Hola soy ${this.nombre} tengo ${this.edad} anios mi dni es ${this.dni}`);
+    }
+}
+
+let objetoPersona = new Persona("Cristian Acero", 26);
+objetoPersona.estableceDni = 1234567; ///nos fuimos al set
+objetoPersona.dni = 123; /// aqui alteramos el dato de la propiedad
+objetoPersona.saludar();
+console.log(objetoPersona.dni);
