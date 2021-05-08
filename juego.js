@@ -204,7 +204,7 @@ let objetoPersona = new Persona("Cristian Acero"); /// esto es una instancia de 
 console.log(objetoPersona.nombre);               // variables publicas = las que podemos acceder desde afiera y tiene this.
 console.log(objetoPersona.dni);               // variables privada = me va a mostrar undefined
 
-////////////metodos////////////
+///////////.***********metodos******************////////////
 
 function Persona(nombre) { 
     this.nombre = nombre;
@@ -268,3 +268,33 @@ let objetoPersona2 = new Persona("Omaira", 50); /// nueva instancia de la clase 
               
 objetoPersona.saludar();
 objetoPersona2.saludar();
+
+
+//***************metodo fuera de la clase-prototipos****************//
+
+function Persona(nombre, edad) { 
+    this.nombre = nombre;
+    this.edad = edad;
+    let dni = "1234567"; 
+    
+    this.getDni = function() {
+        return dni ;
+    }
+/*
+    this.saludar = function() {
+        console.log(`Hola soy ${nombre} tengo ${edad} anios mi dni es ${this.getDni()}`);
+    }
+*/
+}
+
+Persona.prototype.saludar = function() {
+    console.log(`Hola soy ${this.nombre} tengo ${this.edad} anios mi dni es ${this.getDni()}`);
+} /// esto es un metodo creado fuera de clase, es el mismo de this.saludar
+
+
+let objetoPersona = new Persona("Cristian Acero", 26); 
+let objetoPersona2 = new Persona("Omaira", 50); 
+
+objetoPersona.saludar();
+objetoPersona2.saludar();
+
