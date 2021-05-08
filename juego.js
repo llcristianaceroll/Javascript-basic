@@ -219,3 +219,27 @@ function Persona(nombre) {
 let objetoPersona = new Persona("Cristian Acero"); 
 console.log(objetoPersona.nombre);               
 console.log(objetoPersona.getDni());  // ahora si puede acceder al dni asi sea privada ya que estoy generando un metodo que me devuelve dni
+
+/////////////metodo para saludar////////
+
+function Persona(nombre, edad) { 
+    this.nombre = nombre;
+    this.edad = edad;
+    let dni = "1234567"; 
+    
+    this.getDni = function() { /// esto es un metodo= accion quue tiene una clase ej accder al dni que es variable privada
+        return dni ;
+    }
+
+    this.saludar = function() {
+        console.log(`Hola soy ${nombre} tengo ${edad} anios mi dni es ${dni}`);
+    }/// este es un metodo para saludar
+
+
+}
+
+let objetoPersona = new Persona("Cristian Acero", 26); // instancia de la clase persona
+let objetoPersona2 = new Persona("Omaira", 50); /// nueva instancia de la clase persona
+              
+objetoPersona.saludar();
+objetoPersona2.saludar();
